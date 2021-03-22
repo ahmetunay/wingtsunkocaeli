@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from localhost:51332/yonet/default.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Nov 2018 09:29:03 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <title>
+        Yönetim Paneli
+    </title>
+    <link rel="icon" type="image/ico" href="~/Content/yonet/favicon.html" />
+    <link href="~/Content/yonet/css/bootstrap-treeview.css" rel="stylesheet" />
+    <link href="~/Content/yonet/css/stylesheets.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/Content/assets/css/sweetalert.html" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/assets/plugins/html_summernote/summernote.html" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 7]>
+        <link href="css/ie.css" rel="stylesheet" type="text/css" />
+        <script type='text/javascript' src='js/plugins/other/lte-ie7.js'></script>
+    <![endif]-->
+    <script src="~/Content/yonet/js/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jquery/jquery-ui-1.10.1.custom.min.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jquery/jquery-migrate-1.1.1.min.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jquery/globalize.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/other/excanvas.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/other/jquery.mousewheel.min.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/bootstrap/bootstrap.min.js'></script>
+    <script src="~/Content/yonet/js/plugins/cleditor/jquery.cleditor.js" type="text/javascript"></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/cookies/jquery.cookies.2.2.0.min.js'></script>
+    <script type="text/javascript" src="~/Content/yonet/js/plugins/datatables/jquery.dataTables-TR.min.js"></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jflot/jquery.flot.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jflot/jquery.flot.stack.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jflot/jquery.flot.pie.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/jflot/jquery.flot.resize.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/sparklines/jquery.sparkline.min.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+
+    <script type='text/javascript' src="~/Content/yonet/js/plugins/uniform/jquery.uniform.min.js"></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/fancybox/jquery.fancybox.pack.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/shbrush/XRegExp.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/shbrush/shCore.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/shbrush/shBrushXml.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/shbrush/shBrushJScript.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/plugins/shbrush/shBrushCss.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/plugins.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/charts.js'></script>
+
+    <script type='text/javascript' src='~/Content/yonet/js/actions.js'></script>
+    <script type='text/javascript' src='~/Content/yonet/js/bootstrap-treeview.js'></script>
+
+
+</head>
+    <body>
+        <form method="post" action="#" id="form1">
+            <div class="aspNetHidden">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTU1MjE1MzkxD2QWAmYPZBYCAgMPZBYCAgIPZBYOAgEPFgIeBFRleHQFATJkAgMPFgIfAAUBMmQCBQ8WAh8ABQEwZAIHDxYCHwAFATBkAgkPFgIeC18hSXRlbUNvdW50AgUWCmYPZBYCZg8VAQRCbG9nZAIBD2QWAmYPFQEJw5xyw7xubGVyZAICD2QWAmYPFQEIUHJvamVsZXJkAgMPZBYCZg8VAQZHYWxlcmlkAgQPZBYCZg8VAQxWaWRlbyBHYWxlcmlkAgsPFgIfAAUCNTZkAg0PFgIfAQIFFgpmD2QWAmYPFQINQVNQLnBhZ2VfYXNweBRPYmplY3QgcmVmZXJlbmNlIG5vdGQCAQ9kFgJmDxUCEEFTUC5kZWZhdWx0X2FzcHgUT2JqZWN0IHJlZmVyZW5jZSBub3RkAgIPZBYCZg8VAg1BU1AucGFnZV9hc3B4FE9iamVjdCByZWZlcmVuY2Ugbm90ZAIDD2QWAmYPFQIQQVNQLmRlZmF1bHRfYXNweBRPYmplY3QgcmVmZXJlbmNlIG5vdGQCBA9kFgJmDxUCEEFTUC5kZWZhdWx0X2FzcHgUT2JqZWN0IHJlZmVyZW5jZSBub3RkZPR4r+2WtmkzThrHWs+sZB8DadlrKgreCmYNgIpDsOuc" />
+            </div>
+
+            <div class="aspNetHidden">
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="656D83ED" />
+            </div>
+            <div id="loader"><img src="~/Content/assets/images/revolution_slider/assets/loader.gif" /></div>
+            <div>
+                <div class="sidebar">
+                    <div class="top">
+                        <a href="http://localhost:51332/yonet" class="logo"></a>
+                    </div>
+                    <div class="nContainer">
+                        <ul class="navigation">
+
+                            <li>
+                                <a href="#" class="blyellow">Menüler</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/MainMenus/">Menüleri Görüntüle</a></li>
+                                    <li><a href="/MainMenus/Create">Menü Ekle</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="blgreen">Sayfalar</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/SubMenus/Index">Sayfaları Görüntüle</a></li>
+                                    <li><a href="/SubMenus/Create">Sayga Ekle</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="blgreen">Galeri</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/Galeries/">Galerileri Görüntüle</a></li>
+                                    <li><a href="/Galeries/Create">Galeri Ekle </a></li>
+                                    <li><a href="/Videos">Videolar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="bldblue">Haberler</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/News/Create">Haber Ekle</a></li>
+
+                                    <li><a href="/News">Haberleri Görüntüle</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="bldblue">Mesajlar</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/Contactss">Görüntüle</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="bldblue">Ziyaretçi Defteri</a>
+                                <div class="open"></div>
+                                <ul>
+                                    <li><a href="/Visits">Görüntüle</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="close">
+                            <span class="ico-remove"></span>
+                        </a>
+                    </div>
+                    <div class="widget">
+                        <div class="datepicker"></div>
+                    </div>
+                </div>
+                <div class="body">
+
+                    @RenderBody()
+                </div>
+            </div>
+        </form>
+    </body>
+
+<!-- Mirrored from localhost:51332/yonet/default.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Nov 2018 09:29:21 GMT -->
+</html>

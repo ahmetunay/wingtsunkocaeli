@@ -1,0 +1,972 @@
+﻿
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from localhost:51332/yonet/logs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Nov 2018 09:30:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
+    <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
+    <![endif]-->                
+    <title>
+	Yönetim Paneli
+</title><link rel="icon" type="image/ico" href="favicon.html" /><link href="css/bootstrap-treeview.css" rel="stylesheet" type="text/css" /><link href="css/stylesheets.css" rel="stylesheet" type="text/css" /><link type="text/css" rel="stylesheet" href="../assets/css/font-awesome.css" /><link href="../assets/css/sweetalert.html" rel="stylesheet" type="text/css" /><link href="../assets/plugins/html_summernote/summernote.html" rel="stylesheet" type="text/css" />
+
+    <!--[if lte IE 7]>
+        <link href="css/ie.css" rel="stylesheet" type="text/css" />
+        <script type='text/javascript' src='js/plugins/other/lte-ie7.js'></script>
+    <![endif]-->    
+    
+    <script type='text/javascript' src='js/plugins/jquery/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/jquery-ui-1.10.1.custom.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/jquery-migrate-1.1.1.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/globalize.js'></script>
+    <script type='text/javascript' src='js/plugins/other/excanvas.js'></script>
+    
+    <script type='text/javascript' src='js/plugins/other/jquery.mousewheel.min.js'></script>
+        
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap.min.js'></script>
+    <script src="js/plugins/cleditor/jquery.cleditor.js" type="text/javascript"></script> 
+    
+    <script type='text/javascript' src='js/plugins/cookies/jquery.cookies.2.2.0.min.js'></script>    
+    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables-TR.min.js"></script>
+
+    <script type='text/javascript' src='js/plugins/jflot/jquery.flot.js'></script>    
+    <script type='text/javascript' src='js/plugins/jflot/jquery.flot.stack.js'></script>    
+    <script type='text/javascript' src='js/plugins/jflot/jquery.flot.pie.js'></script>
+    <script type='text/javascript' src='js/plugins/jflot/jquery.flot.resize.js'></script>
+    
+    <script type='text/javascript' src='js/plugins/sparklines/jquery.sparkline.min.js'></script>        
+    
+    <script type='text/javascript' src='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+    
+    <script type='text/javascript' src="js/plugins/uniform/jquery.uniform.min.js"></script>
+    
+     <script type='text/javascript' src='js/plugins/fancybox/jquery.fancybox.pack.js'></script>
+    
+    <script type='text/javascript' src='js/plugins/shbrush/XRegExp.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shCore.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushXml.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushJScript.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushCss.js'></script>    
+    
+    <script type='text/javascript' src='js/plugins.js'></script>
+    <script type='text/javascript' src='js/charts.js'></script>
+    
+    <script type='text/javascript' src='js/actions.js'></script>
+      <script type='text/javascript' src='js/bootstrap-treeview.js'></script>
+       <script type='text/javascript' src='../assets/js/sweetalert-dev.html'></script>
+    
+</head>
+<body>
+    <form method="post" action="http://localhost:51332/yonet/logs.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="410D5397" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdADnVBwa3LPNuUusHdBJeK44qyLu7lce864W42CSqJyQjljgQ19QxaWQZNlvk/ls3thZwLCVKtoEh/gDVPk1CGEpiHdOPEspQDNiT+uxW/K7spFJ0toap771UYnyiplfzpogPnFoMz3NyDkNOKVt0KDAThoAN8Gi7eAdAu7V7gfaUeYnpKaHy+ksu13sZw6HqVqTMyJP/7ourckyDoTQyXs98jTp+x5Rw9hAem1t1UzmJN50uhT/bkS0hguzHQEzt1ZDMzBve5i5U/4uiHwP7yG6V50owvLSZU+6XT9mXZjtqKJdYA1qZZSUuuWW7g7YlzjYVA3oek1kbyeyZaYrU6LVDvS/UWn/cWjh0s/vnRMOURSw8aN8u0S0U0ihfgvwRKymLxD+hLeJ1NSVPL3aHoxG7fb0CAK4KF9QtOcjVbqHneAOraxcVxHokZA7ekQu1jSITFzb/XsEQwm19vCwA+UYgYAQ90M0XBF606Loi3zPk35AMuqrL0qJM4e72+xwAd1gbEUL7OF9YYyqU3JrKH4CPvgb2djI9J/CyRe30XG8nx1sMAgilO4cFZGmkGOBsrIKBtkOXJZIZqjAid98F7M6M0IBIQp6C+IIwzF1zDS2qhPhTLkWujGcF9BXtDP7YhHozUz544tcjdaQRxoRh+hQcQhmauMLmg7yntQu+9SUflYN++rOg3B19/99zBaikHOIL3loIoSEyhnN2GHd6bvGTfM3ld3wuJMdxEo1X9HMFbslfuPwd2ZRvvvsJ0IxYHv+LzFl5JOwvGi4a5rH82KMEwXeppw6ODwVuTsGzregJ3qqwIT67igoQEurA0SaFA3SD+BiqYvfIHKOLcxSrBgYBNqKux2C1orvC7pUC2F/Kc4H/l2ABzEIhjKp7GblDduqgPrA8aoeFr3lID9L5x+gEWRyyhPM7dw+Jcq6V/ddDoyJp/oam6MPlpmg0Vto+ilQicKIZZPwp/KHXovstXIIxwkPERM1iZfJaATsyZPehVz0gMUXk3WTpGwOTs58OItfmxlw3ou59pY9YTE4y2yn3Q5cjCqOWPPIZedbHsp63FG48cPFHlbCPhN7R8IMPjmVNp2mMI/qBM4DA6ubo+Xv6EDygv1tIbN2PlW+HPDvaJeqkQQjXfAFTO45+7oha5JnIV3mAMtUT4nMINRc9SMOcr++oV18Lw1ysQZPTN7dpSDaCVgt8LZVj8T6v4mwxxYiGxGzvixR+FGaX7KtzznFJOyeKGU6PKSmpsvrt6wqHeg==" />
+</div>
+    <div id="loader"><img src="img/loader.gif"/></div>
+            <div>
+            <div class="sidebar">
+            <div class="top">
+                <a href="http://localhost:51332/yonet" class="logo"></a>
+            </div>
+            <div class="nContainer">                
+                <ul class="navigation">         
+                    <li class="active"><a href="default.html" class="blblue">Yönetim</a></li>
+                    <li>
+                        <a href="#" class="blyellow">Sunum</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="slides.html">Sunumlar</a></li>
+                            <li><a href="slide_add.html">Sunum Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="blgreen">Sayfalar</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="pages.html">Sayfa Yapıları</a></li>
+                            <li><a href="top_menu.html">Üst Menü</a></li>
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="#" class="blgreen">Galeri</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="photo_gallery.html">Fotoğraf Galerisi</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="bldblue">Yapılandırmalar</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="general_settingsb1e5.html?Type=1">Sistem Ayarları</a></li>
+                            
+                            <li><a href="users.html">Kullanıcılar</a></li>          
+                        </ul>
+                    </li>
+                </ul>
+                <a class="close">
+                    <span class="ico-remove"></span>
+                </a>
+            </div>
+            <div class="widget">
+                <div class="datepicker"></div>
+            </div>
+                 </div>
+            <div class="body">
+             <ul class="navigation">
+                <li>
+                    <a href="default.html" class="button">
+                        <div class="icon">
+                            <span class="ico-monitor"></span>
+                        </div>                    
+                        <div class="name">Anasayfa</div>
+                    </a>                
+                </li>
+                <li>
+                    <a href="#" class="button yellow">
+                        <div class="arrow"></div>
+                        <div class="icon">
+                            <span class="ico-cog-2"></span>
+                        </div>                    
+                        <div class="name">Ayarlar</div>
+                    </a>          
+                    <ul class="sub">
+                        <li><a href="general_settingsb1e5.html?Type=1">Sistem Ayarları</a></li>
+                        
+                        
+                        <li><a href="users.html">Kullanıcılar</a></li>
+                    </ul>
+                </li>                
+                <li>
+                    <a href="pages.html" class="button green">
+                        <div class="icon">
+                            <span class="ico-pen-2"></span>
+                        </div>                    
+                        <div class="name">Sayfalar</div>
+                    </a>                
+                </li>                        
+                      
+                <li>
+                    <a href="slides.html" class="button dblue">
+                        <div class="icon">
+                            <span class="ico-layout-7"></span>
+                        </div>                    
+                        <div class="name">Sunumlar</div>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#" class="button purple">
+                        <div class="arrow"></div>
+                        <div class="icon">
+                            <span class="ico-box"></span>
+                        </div>                    
+                        <div class="name">Sistem</div>
+                    </a>                
+                    <ul class="sub">
+                        <li><a href="logs.html">Loglar</a></li>
+                    </ul>                                        
+                </li>
+                <li>
+                    <div class="user">
+                        <img src="img/user.png" width="25" height="25" align="left"/>
+                        <a href="#" class="name">
+                            <span>Kurumsal</span>
+                            <span class="sm">Yönetici</span>
+                        </a>
+                    </div>
+                    <div class="buttons">
+                        <div class="sbutton green navButton">
+                            <a href="#"><span class="ico-align-justify"></span></a>
+                        </div>
+                        <div class="sbutton blue">
+                            <a href="#"><span class="ico-cogs"></span></a>
+                            <div class="popup">
+                                <div class="arrow"></div>
+                                <div class="row-fluid">
+                                    <div class="row-form">
+                                        <div class="span12"><strong>Ayarlar</strong></div>
+                                    </div>                                    
+                                    <div class="row-form">
+                                        <div class="span4">Sol Menü:</div>
+                                        <div class="span8"><input type="radio" class="cNav" name="cNavButton" value="default"/> Varsayılan <input type="radio" class="cNav" name="cNavButton" value="bordered"/> Toplu</div>
+                                    </div>                                    
+                                    <div class="row-form">
+                                        <div class="span4">Yapı:</div>
+                                        <div class="span8"><input type="radio" class="cCont" name="cContent" value=""/> Değişken <input type="radio" class="cCont" name="cContent" value="fixed"/> Sabit</div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </li>                
+            </ul>
+              <div class="content">
+               
+      
+            <div class="content">
+                
+                <div class="page-header">
+                    <div class="icon">
+                        <span class="ico-layout-7"></span>
+                    </div>
+                    <h1>Sistem Günlüğü <small>Hata kayıtları</small></h1>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12">
+
+                        <div class="block">
+                            <div class="head orange">
+                                <div class="icon"><span class="ico-layout-9"></span></div>
+                                <h2>Hata Kayıtları</h2>
+                                <ul class="buttons">
+                                    <li><a href="#" onClick="source('table_sort_custom'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
+                                </ul>                            
+                            </div>                
+                                <div class="data-fluid">
+                                    <table id="tableLog" class="table fTable lcnp" cellpadding="0" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" class="checkall"/></th>
+                                                <th>No</th>
+                                                <th>Sayfa</th>
+                                                <th>Log</th>
+                                                <th class="TAC">İşlem</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6673</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_0" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl00$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6672</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_1" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl01$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6671</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_2" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl02$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6670</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_3" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl03$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6669</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_4" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl04$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6668</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_5" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl05$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6667</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_6" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl06$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6666</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_7" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl07$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6665</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_8" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl08$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6664</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_9" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl09$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6663</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_10" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl10$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6662</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_11" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl11$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6661</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_12" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl12$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6660</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_13" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl13$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6659</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_14" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl14$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6658</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_15" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl15$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6657</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_16" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl16$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6656</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_17" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl17$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6655</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_18" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl18$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6654</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_19" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl19$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6653</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_20" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl20$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6652</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_21" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl21$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6651</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_22" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl22$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6650</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_23" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl23$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6649</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_24" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl24$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6648</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_25" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl25$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6631</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_26" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl26$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6630</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_27" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl27$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6629</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_28" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl28$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6628</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_29" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl29$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6627</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_30" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl30$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6626</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_31" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl31$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6625</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_32" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl32$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6624</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_33" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl33$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6623</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_34" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl34$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6622</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_35" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl35$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6621</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_36" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl36$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6620</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_37" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl37$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6619</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_38" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl38$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6618</td>
+                                                <td><span class="label label-important">ASP.page_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_39" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl39$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6617</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_40" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl40$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6616</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_41" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl41$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6615</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_42" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl42$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6614</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_43" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl43$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6613</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_44" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl44$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6612</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_45" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl45$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6611</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_46" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl46$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6610</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_47" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl47$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6609</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_48" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl48$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6608</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_49" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl49$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6607</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_50" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl50$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6606</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_51" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl51$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6605</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_52" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl52$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6604</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_53" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl53$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>6603</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_54" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl54$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                             <tr>
+                                                <td><input type="checkbox"/></td>
+                                                <td>0</td>
+                                                <td><span class="label label-important">ASP.default_aspx</span></td>
+                                                <td>Object reference not set to an instance of an object.</td>
+                                                <td>
+                                                    <a id="ContentPlaceHolder1_RptLogs_LnkDelete_55" class="button red" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$RptLogs$ctl55$LnkDelete&#39;,&#39;&#39;)"><div class='icon'><span class='ico-remove'></span></div></a>
+                                                     
+                                                    </a>                                              
+                                                </td>
+                                            </tr>
+                                  
+                                            
+                                                
+                                        </tbody>
+                                    </table>                    
+                                </div> 
+                        </div>              
+
+                    </div>
+                </div>  
+            </div>
+       
+            <script>
+        $(function () {
+            $('#tableLog').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "bDestroy": true
+            });
+        });
+    </script>
+
+                  </div>
+       </div>
+            </div>
+    </form>
+</body>
+
+<!-- Mirrored from localhost:51332/yonet/logs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Nov 2018 09:30:43 GMT -->
+</html>

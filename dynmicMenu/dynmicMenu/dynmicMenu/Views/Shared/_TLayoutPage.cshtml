@@ -1,0 +1,271 @@
+﻿
+@model dynmicMenu.Models.Entity.Common
+<!DOCTYPE html>
+<html>
+<!--<![endif]-->
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+
+    <meta name="keywords" content="kocaeli wingtsun,izmit wingtsun,dai-sifu hasan cifci,sifu erdal karaal,wıngtsun nedir,wıngtsun tarıhı,yıp-man,dövüş prensipleri,güç prensipleri,dövüş mesafeleri,serbest dövüşü teknikleri,wıngtsun faydaları,wıngtsun'un dığerlerınden farkı,wıngtsun kadınlar
+wıngtsun çocuklar ,escrıma,chı kung" />
+    <meta name="description" content="Wing Tsun Kocaeli,izmit wingtsun,dövüş prensipleri,güç prensipleri" />
+
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/demo/favicon.ico" />
+
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <!-- CORE CSS
+    <link href="~/Content/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        -->
+
+    <link href="~/Content/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/sky-forms.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/line-icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/owl-carousel/owl.pack.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/flexslider.css" rel="stylesheet" type="text/css" />
+
+    <!-- REVOLUTION SLIDER -->
+    <link href="~/Content/assets/css/revolution-slider.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/layerslider.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="~/Content/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/header-default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/footer-default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <style type="text/css">
+        .smoothscroll #wrapper .alternate .container .row .col-md-6 .lead {
+            text-align: justify;
+        }
+
+        .smoothscroll #wrapper .alternate .container .row .col-md-6 p {
+            text-align: justify;
+        }
+    </style>
+    <!--<link href="assets/css/layout-dark.css" rel="stylesheet" type="text/css"  />-->
+    <!-- Morenizr -->
+    <script src="~/Content/assets/plugins/modernizr.min.js"></script>
+    <!--[if lte IE 8]>
+    <script src="assets/plugins/respond.js"></script>
+    <![endif]-->
+
+    <style>
+        .kenarlik {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 2px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script src="~/Content/lightbox/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/lightbox/js/lightbox.min.js"></script>
+    <link href="~/Content/lightbox/css/lightbox.css" rel="stylesheet" />
+</head>
+
+<body class="smoothscroll">
+    <div id="wrapper">
+        <div id="header">
+            <!-- class="sticky" for sticky menu -->
+            <!-- Top Bar -->
+            <header id="topBar">
+                <div class="container">
+
+                    <div class="pull-right fsize13 margin-top10 hide_mobile">
+
+                        <!-- mail , phone -->
+                        <a href="mailto:info@wingtsunkocaeli.com">info@wingtsunkocaeli.com</a> &bull; 0 532 488 46 62
+
+                        <div class="block text-right">
+                            <!-- social -->
+                            <a href="#" class="social fa fa-facebook"></a>
+                            <a href="#" class="social fa fa-twitter"></a>
+                            <a href="#" class="social fa fa-youtube"></a>
+
+                        </div><!-- /social -->
+
+                    </div>
+
+                    <!-- Logo -->
+                    <a class="logo" href="index">
+                        <img src="~/Content/assets/images/wingtsunkocaeli.jpg" alt="Wingtsun Kocaeli" title="Wingtsun Kocaeli" />
+                    </a>
+
+                </div><!-- /.container -->
+            </header>
+            <!-- /Top Bar -->
+            <!-- Top Nav -->
+            <header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Search --><!-- /Search -->
+                    <!-- Top Nav -->
+                    <div class="navbar-collapse nav-main-collapse collapse">
+                        <nav class="nav-main">
+
+                            <ul id="topMain" class="nav nav-pills nav-main">
+                                <li class="dropdown">
+                                    <a href="#">AnaSayfa</a>
+                                </li>
+                                @{
+                                    for (int item = 1; item < Model.Mlist.Count - 4; item++) {
+                                        <li class="dropdown">
+                                            <a href="#">@Model.Mlist[item].menuname</a>
+                                            @if (Model.Mlist[item].SubMenus.Count > 0) {
+                                                <ul class="dropdown-menu">
+                                                    @foreach (var item2 in Model.Mlist[item].SubMenus) {
+                                                        <li><a href="/SubMenus/Show/@item2.id">@item2.submenuname</a></li>
+                                                    }
+                                                </ul>
+                                            }
+                                        </li>
+                                    }
+                                }
+                                <li class="dropdown">
+                                    <a href="/News/Haberler">Haberler</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/Visits/Create">Ziyaretçi Defteri</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Galeri</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/SubMenus/Show/">Fotoğraf Galerisi</a></li>
+                                        <li><a href="/SubMenus/Show/">Video Galerisi</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="/Contactss/Create">İletişim</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /Top Nav -->
+
+                </div><!-- /.container -->
+            </header>
+            <!-- /Top Nav -->
+        </div>
+
+        <!-- /PAGE TOP -->
+        <!-- CONTENT -->
+        <!-- /CONTENT -->
+        @RenderBody();
+
+        <!-- FOOTER -->
+        <!-- FOOTER -->
+        <!-- alt -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="spaced col-md-4 col-sm-4 hidden-xs">
+                                <h4><strong>ESCRIMA</strong></h4>
+                                <ul class="list-unstyled fsize13">
+                                    <li>Filipinliler düşman saldırılarına karşı kendilerini savunmak için kamış sopa yardımı ile, erken dövüş sanatını geliştirmişlerdir.16. yüzyılın sonunda, Filipin yerlileri, İspanyollar tarafından işgal edilmiş ve her türlü silah yasaklanmıştır. Bununla birlikte, Filipinlilerin geleneksel dansı olarak bilinen Escrima’nın teknikleri ayaklanma için kullanılmıştır. Amerikan egemenliği sonrasında Filipinliler, varlığını Dünya Savaşı’nda Japonya’ya karşı kanıtlanmıştır... <a href="escrima">Devamı &raquo;</a></li>
+                                </ul>
+                            </div>
+                            <div class="spaced col-md-4 col-sm-4 hidden-xs">
+                                <h4><strong>CHI KUNG</strong></h4>
+                                <ul class="list-unstyled fsize13">
+                                    <li>
+                                        Her insan günlük yaşamında,iş yaşantısında,sporda vücudunu tek yönlü çalıştırır. Bu özellikle profesyonel sporcularda çok görülür.Bu farkına varmadığımız çalışma ne kadar yogun Olursa bedenimize bir o kadar yüklenmiş oluruz.Bu tek taraflı bedeni çalıştırma bedenimize yaşam enerjimizin Tam anlamıyla akışını engeller.Bundan dolayi vücudumuzda kasılmalar ,
+                                        gerginlikler ,tutulmalar ,ağrılar ,vb.. oluşur. Ve bunun sonucunda ise birçok hastalığa... <a href="chikung">Devamı &raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="spaced col-md-4 col-sm-4 hidden-xs news-list">
+                                <h4>Bizden <strong>Haberler</strong></h4>
+                                <p>
+                                    <marquee direction="up" height="180" scrollamount="1" onmouseover='this.stop()' onmouseout='this.start()'>
+                                 @{
+                                        
+                                     foreach (var item in Model.Nlist) {
+                                          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+		  
+			                                <tr>
+				                                <td width="100%" colspan="2" class="yazi12"><a href="#" class="yazi12" style="color:#fff;" title="#"><strong>@item.newstitle</strong></a></td>
+			                                </tr>
+			                                <tr>
+				                                <td class="yazi12">@item.date</td>
+				                                <td height="18"><div align="right"><a href="/News/Show/@item.id" style="color:#fff;" title="#" class="yazi12">Devamı &raquo;</a></div></td>
+			                                </tr>
+			                                <tr>
+				                                <td colspan="2"><div style="border-bottom:1px solid #ddd;margin-bottom:10px;padding-bottom:10px;"></div></td>
+			                                </tr>
+			
+		                                </table>
+                                         }
+                                     }
+
+                                    </marquee>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo_footer dark col-md-3">
+                        <h4>Bize <strong>Ulaşın</strong></h4>
+                        <p class="block">
+                            Dansanat İzmit Dans Okulu Alemdar Caddesi, Dündar Çiğit Sokak, No:6,  İzmit, Kocaeli<br />
+                            Email: info@wingtsunkocaeli.com<br />
+                            Phone: <strong style="color:#FFF">(0532) 488 46 62 </strong>
+                        </p>
+                        <p class="block">
+                            <a href="#" class="social fa fa-facebook"></a>
+                            <a href="#" class="social fa fa-twitter"></a>
+                            <a href="#" class="social fa fa-youtube"></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <hr />
+            <div class="copyright">
+                <div class="container text-center fsize12">
+                    Kurumsal Site 2016 Wingtsun Kocaeli
+                </div>
+            </div>
+        </footer>
+    </div><!-- /#wrapper -->
+    <!-- JAVASCRIPT FILES -->
+
+
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-2.1.4.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery.isotope.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/masonry.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/magnific-popup/jquery.magnific-popup.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/owl-carousel/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/knob/js/jquery.knob.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/flexslider/jquery.flexslider-min.js")"></script>
+
+    <!-- REVOLUTION SLIDER  -->
+    <script src="@Url.Content("~/Content/assets/plugins/revolution-slider/js/jquery.themepunch.tools.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/revolution_slider.js")"></script>
+
+    <script src="@Url.Content("~/Content/assets/js/scripts.js")"></script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿
+@model dynmicMenu.Models.Entity.Common
+@{
+    ViewBag.Title = "T";
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+
+<h2>TEST SAYFASI</h2>
+<h2>Üst Menüler</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mm.menuname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mm.menuurl)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Mlist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.menuname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.menuurl)
+            </td>
+
+        </tr>
+    }
+
+</table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ss.submenuname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ss.submenuurl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ss.MainMenu.menuname)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Slist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.submenuname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.submenuurl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainMenu.menuname)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detaylar/Ayarlar", "Details", new { id = item.id }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.id }) |
+                @Html.ActionLink("Görüntüle", "Show", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

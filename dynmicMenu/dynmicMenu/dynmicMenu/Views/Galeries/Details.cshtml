@@ -1,0 +1,42 @@
+﻿@model dynmicMenu.Models.Entity.Common
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PanelLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Galery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.g.name)
+        </dt>
+        <dt>
+            "Videolar"
+        </dt>
+        <dd>
+            @{
+                for (int item = 0; item < Model.gList.Count; item++)
+                {
+
+                    if (Model.gList[item].Videos.Count > 0)
+                    {
+
+                        foreach (var item2 in Model.gList[item].Videos)
+                        {
+                           
+                            <iframe width="560" height="315" src="@item2.videourl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        }
+
+                    }
+
+                }
+            }
+        </dd>
+
+    </dl>
+</div>

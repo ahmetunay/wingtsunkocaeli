@@ -1,0 +1,30 @@
+﻿
+@model dynmicMenu.Models.Entity.MainMenuModel
+
+@{
+    ViewBag.Title = "Menus";
+}
+
+<h2>Menüler</h2>
+<div class="">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Menü İsmi</th>
+                <th>Url</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.MenuList) {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.menuname</td>
+                    <td>@item.menuurl</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

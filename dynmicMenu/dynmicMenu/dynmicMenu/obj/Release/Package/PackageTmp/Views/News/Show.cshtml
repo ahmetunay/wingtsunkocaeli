@@ -1,0 +1,31 @@
+﻿@model dynmicMenu.Models.Entity.Common
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+
+<section class="page-title">
+    <div class="container">
+
+        <header>
+            <!-- /breadcrumb -->
+            <h2>
+                <!-- Page Title -->
+                <strong>@Html.DisplayFor(model => model.n.newstitle)  </strong>
+            </h2><!-- /Page Title -->
+        </header>
+    </div>
+</section>
+<section class="alternate">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9">
+               
+                <p> @Html.DisplayFor(model => model.n.date)</p>
+                <p> @Html.DisplayFor(model => model.n.news1)</p>
+            </div>
+
+        </div>
+    </div>
+</section>

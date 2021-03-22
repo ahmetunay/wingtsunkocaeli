@@ -1,0 +1,35 @@
+﻿@model dynmicMenu.Models.Entity.Common
+
+@{
+    ViewBag.Title = "Haberler";
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+
+
+<div class="row">
+    <div class="padding-top20 col-md-offset-3 col-md-9">
+        @{
+            foreach (var item in Model.Nlist) {
+                <article class="">
+                    <div class="blog-entry-content entry-details clr">
+                        <header class="blog-entry-header wpex-clr">
+                            <h2 class="blog-entry-title entry-title"><a href="/News/Show/@item.id" rel="bookmark">@item.newstitle</a></h2>
+                        </header>
+
+                        <div class="blog-entry-excerpt wpex-clr">
+                            <p>@item.news1</p>
+                        </div>
+                        <div class="">
+                            <a href="/News/Show/@item.id" class="theme-button">Devamını Oku<span class="readmore-rarr hidden">→</span></a>
+                        </div>
+                    </div>
+                </article>
+                <hr>
+            }
+        }
+        
+
+    </div>
+</div>
+
+

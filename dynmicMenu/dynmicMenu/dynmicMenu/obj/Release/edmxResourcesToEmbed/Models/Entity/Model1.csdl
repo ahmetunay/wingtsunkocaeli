@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBDynamicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MainMenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menuname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="menuurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SubMenus" Relationship="DBDynamicModel.FK_SubMenu_MainMenu" FromRole="MainMenu" ToRole="SubMenu" />
+  </EntityType>
+  <EntityType Name="SubMenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="submenuname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="submenuurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mainmenuid" Type="Int32" />
+    <NavigationProperty Name="MainMenu" Relationship="DBDynamicModel.FK_SubMenu_MainMenu" FromRole="SubMenu" ToRole="MainMenu" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DBDynamicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MainMenus" EntityType="Self.MainMenu" />
+    <EntitySet Name="SubMenus" EntityType="Self.SubMenu" />
+    <AssociationSet Name="FK_SubMenu_MainMenu" Association="DBDynamicModel.FK_SubMenu_MainMenu">
+      <End Role="MainMenu" EntitySet="MainMenus" />
+      <End Role="SubMenu" EntitySet="SubMenus" />
+    </AssociationSet>
+    <EntitySet Name="Contacts" EntityType="DBDynamicModel.Contact" />
+    <EntitySet Name="News" EntityType="DBDynamicModel.News" />
+    <EntitySet Name="Visits" EntityType="DBDynamicModel.Visit" />
+    <EntitySet Name="Galeries" EntityType="DBDynamicModel.Galery" />
+    <EntitySet Name="Images" EntityType="DBDynamicModel.Image" />
+    <AssociationSet Name="FK_Image_Galery" Association="DBDynamicModel.FK_Image_Galery">
+      <End Role="Galery" EntitySet="Galeries" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <EntitySet Name="Videos" EntityType="DBDynamicModel.Video" />
+    <AssociationSet Name="FK_Video_Galery" Association="DBDynamicModel.FK_Video_Galery">
+      <End Role="Galery" EntitySet="Galeries" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_SubMenu_MainMenu">
+    <End Type="DBDynamicModel.MainMenu" Role="MainMenu" Multiplicity="0..1" />
+    <End Type="DBDynamicModel.SubMenu" Role="SubMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainMenu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SubMenu">
+        <PropertyRef Name="mainmenuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="konu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="newstitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="news1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Galery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Images" Relationship="DBDynamicModel.FK_Image_Galery" FromRole="Galery" ToRole="Image" />
+    <NavigationProperty Name="Videos" Relationship="DBDynamicModel.FK_Video_Galery" FromRole="Galery" ToRole="Video" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imagename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="imageurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="galeryid" Type="Int32" />
+    <NavigationProperty Name="Galery" Relationship="DBDynamicModel.FK_Image_Galery" FromRole="Image" ToRole="Galery" />
+  </EntityType>
+  <Association Name="FK_Image_Galery">
+    <End Type="DBDynamicModel.Galery" Role="Galery" Multiplicity="0..1" />
+    <End Type="DBDynamicModel.Image" Role="Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Galery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="galeryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="videourl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="galeryid" Type="Int32" />
+    <NavigationProperty Name="Galery" Relationship="DBDynamicModel.FK_Video_Galery" FromRole="Video" ToRole="Galery" />
+  </EntityType>
+  <Association Name="FK_Video_Galery">
+    <End Type="DBDynamicModel.Galery" Role="Galery" Multiplicity="0..1" />
+    <End Type="DBDynamicModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Galery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="galeryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

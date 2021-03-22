@@ -1,0 +1,50 @@
+﻿@model dynmicMenu.Models.Entity.Contact
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PanelLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.konu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.konu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mesaj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mesaj)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Mesajlara Dön", "Index")
+</p>

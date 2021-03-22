@@ -1,0 +1,41 @@
+﻿@model IEnumerable<dynmicMenu.Models.Entity.MainMenu>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayoutPage.cshtml";
+}
+
+<h2>Üst Menüler</h2>
+
+<p>
+    @Html.ActionLink("Menü Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.menuname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.menuurl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.menuname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.menuurl)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

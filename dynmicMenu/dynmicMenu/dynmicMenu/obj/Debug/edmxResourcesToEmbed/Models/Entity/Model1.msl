@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBDynamicModelStoreContainer" CdmEntityContainer="DBDynamicEntities">
+    <EntitySetMapping Name="MainMenus">
+      <EntityTypeMapping TypeName="DBDynamicModel.MainMenu">
+        <MappingFragment StoreEntitySet="MainMenu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menuname" ColumnName="menuname" />
+          <ScalarProperty Name="menuurl" ColumnName="menuurl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubMenus">
+      <EntityTypeMapping TypeName="DBDynamicModel.SubMenu">
+        <MappingFragment StoreEntitySet="SubMenu">
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="submenuname" ColumnName="submenuname" />
+          <ScalarProperty Name="submenuurl" ColumnName="submenuurl" />
+          <ScalarProperty Name="mainmenuid" ColumnName="mainmenuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="DBDynamicModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="konu" ColumnName="konu" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="DBDynamicModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="news1" ColumnName="news" />
+          <ScalarProperty Name="newstitle" ColumnName="newstitle" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visits">
+      <EntityTypeMapping TypeName="DBDynamicModel.Visit">
+        <MappingFragment StoreEntitySet="Visit">
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galeries">
+      <EntityTypeMapping TypeName="DBDynamicModel.Galery">
+        <MappingFragment StoreEntitySet="Galery">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="DBDynamicModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="galeryid" ColumnName="galeryid" />
+          <ScalarProperty Name="imageurl" ColumnName="imageurl" />
+          <ScalarProperty Name="imagename" ColumnName="imagename" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="DBDynamicModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="galeryid" ColumnName="galeryid" />
+          <ScalarProperty Name="videourl" ColumnName="videourl" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a1619c603d44382ba50a1d19d9f41c8" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="DBDynamicModel.MainMenu" Width="2.125" PointX="1" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBDynamicModel.SubMenu" Width="1.5" PointX="3.875" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DBDynamicModel.FK_SubMenu_MainMenu" />
+        <EntityTypeShape EntityType="DBDynamicModel.Contact" Width="1.5" PointX="8.875" PointY="1.125" />
+        <EntityTypeShape EntityType="DBDynamicModel.News" Width="1.5" PointX="8.875" PointY="3.125" />
+        <EntityTypeShape EntityType="DBDynamicModel.Visit" Width="1.5" PointX="7.375" PointY="1.125" />
+        <EntityTypeShape EntityType="DBDynamicModel.Galery" Width="1.5" PointX="0.875" PointY="3.5" />
+        <EntityTypeShape EntityType="DBDynamicModel.Image" Width="1.5" PointX="3.875" PointY="3.5" />
+        <AssociationConnector Association="DBDynamicModel.FK_Image_Galery" />
+        <EntityTypeShape EntityType="DBDynamicModel.Video" Width="1.5" PointX="3.875" PointY="5.625" />
+        <AssociationConnector Association="DBDynamicModel.FK_Video_Galery" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿
+@model dynmicMenu.Models.Entity.SubMenuModel
+
+@{
+    ViewBag.Title = "Pages";
+}
+
+<h2>Sayfalar</h2>
+<div class="">
+    <a>@Html.ActionLink("Sayfa Ekle", "CreatePages", "Home")</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sayfa İsmi</th>
+                <th>Url</th>
+                <th>Main Menu id</th>
+                <th>İşlem</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PagesList) {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.submenuname</td>
+                    <td>@item.submenuurl</td>
+                    <td>@item.mainmenuid</td>
+                    <td>@Html.ActionLink("Sil", "DeletePages", "Home",new {i=@item.id },null)</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

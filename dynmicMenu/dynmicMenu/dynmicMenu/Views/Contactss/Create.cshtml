@@ -1,0 +1,109 @@
+﻿@model dynmicMenu.Models.Entity.Common
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+<section class="page-title">
+    <div class="container">
+
+        <header>
+            <h2>
+                <!-- Page Title -->
+                <strong>Bize Ulaşın</strong>
+            </h2><!-- /Page Title -->
+
+        </header>
+
+    </div>
+</section>
+
+<div class="row padding90">
+    <!-- FORM -->
+    <div class="col-md-9">
+
+        <div id="gmap" class="grayscale gmap-half margin-bottom60">
+            <!-- google map -->
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1b372t1rX_rza7PlCzBmwI-tzDS1d8A2K" width="100%" height="250"></iframe>
+        </div>
+        <h3>İletişim Formu</h3>
+        <div class="">
+            <div class="col-md-12">
+            <div class="">
+                
+                @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.Label("İsim")
+                            <div class="">
+                                @Html.EditorFor(model => model.c.isim, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.c.isim, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Mail")
+                            <div class="">
+                                @Html.EditorFor(model => model.c.mail, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.c.mail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Konu")
+                            <div class="">
+                                @Html.EditorFor(model => model.c.konu, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.c.konu, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Mesajınız")
+                            <div class="">
+                                @Html.EditorFor(model => model.c.mesaj, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.c.mesaj, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="">
+                                <input type="submit" value="Gönder" class="btn btn-danger" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            </div>
+        </div>
+
+       
+    </div>
+    <!-- /FORM -->
+    <!-- INFO -->
+    <div class="col-md-3">
+
+        <h2>İletişim Bilgileri</h2>
+
+        <p>
+            Her türlü görüş , öneri, hizmet talepleriniz için bize ulaşınız.
+
+        </p><div class="divider half-margins"><!-- divider --></div>
+
+        <p class="nomargin-bottom">
+            <span class="block"><strong><i class="fa fa-map-marker"></i> Adres:</strong> Yahyakaptan, Şehit Polis Recep Topaloğlu Spor Salonu Arastapark Avm Arkası</span>
+            <span class="block"><strong><i class="fa fa-phone"></i> Telefon :</strong> <a href="tel:(0262) 270 0015">(0532) 488 46 62</a></span>
+            <span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:info@wingtsunkocaeli.com">info@wingtsunkocaeli.com</a></span>
+        </p>
+
+        <div class="divider half-margins"><!-- divider --></div>
+
+        <h4 class="font300">&nbsp;</h4>
+    </div>
+    <!-- /INFO -->
+
+</div>
+

@@ -1,0 +1,52 @@
+﻿@model dynmicMenu.Models.Entity.Common
+@{
+    ViewBag.Title = Model.g.name;
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+
+
+
+<section class="page-title">
+    <div class="container">
+
+        <header>
+            <!-- /breadcrumb -->
+
+            <h2>
+                <!-- Page Title -->
+                <strong>@Model.g.name</strong>
+            </h2><!-- /Page Title -->
+
+        </header>
+
+    </div>
+</section>
+<section class="alternate">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9">
+           
+                @{
+                    for (int item = 0; item < Model.gList.Count; item++)
+                    {
+
+                        if (Model.gList[item].Videos.Count > 0)
+                        {
+
+                            foreach (var item2 in Model.gList[item].Videos)
+                            {
+
+                                <iframe width="560" height="315" src="@item2.videourl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            }
+
+                        }
+
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+</section>

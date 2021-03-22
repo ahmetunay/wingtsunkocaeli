@@ -1,0 +1,43 @@
+﻿@model dynmicMenu.Models.Entity.Common
+
+@{
+    ViewBag.Title = Model.ss.submenuname;
+    Layout = "~/Views/Shared/_TLayoutPage.cshtml";
+}
+<section class="page-title">
+    <div class="container">
+
+        <header>
+            <!-- /breadcrumb -->
+
+            <h2>
+                <!-- Page Title -->
+                <strong>@Html.DisplayFor(model => model.ss.submenuname)</strong>
+            </h2><!-- /Page Title -->
+
+        </header>
+
+    </div>
+</section>
+<section class="alternate">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.ss.text)</p>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12">
+                    <ul class="side-nav list-group margin-bottom30">
+
+                        <li class="list-group-item"><a href="/SubMenus/Edit/@Model.ss.id" title="Duzenle"><i class="fa fa-angle-double-right"></i><span>Düzenle</span></a></li>
+
+                        <li class="list-group-item"><a href="/SubMenus/" title="Geri"><i class="fa fa-angle-double-right"></i><span>Geri</span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

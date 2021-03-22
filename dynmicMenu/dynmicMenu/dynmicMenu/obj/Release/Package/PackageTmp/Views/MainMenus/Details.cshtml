@@ -1,0 +1,35 @@
+﻿@model dynmicMenu.Models.Entity.MainMenu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PanelLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MainMenu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.menuname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menuurl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuurl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

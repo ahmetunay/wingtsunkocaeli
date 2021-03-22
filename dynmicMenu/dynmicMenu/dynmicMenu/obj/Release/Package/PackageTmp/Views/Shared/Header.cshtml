@@ -1,0 +1,36 @@
+﻿
+<h2>HEADER BU</h2>
+<div class="container">
+
+    <!-- Mobile Menu Button -->
+    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Search --><!-- /Search -->
+    <!-- Top Nav -->
+    <div class="navbar-collapse nav-main-collapse collapse">
+        <nav class="nav-main">
+            <ul id="topMain" class="nav nav-pills nav-main">
+
+                @{
+                    foreach (var item in Model.MainMenus) {
+                        <li class="dropdown">
+
+                            <a href="/Page/@item.menuurl">@item.menuname</a>
+                            @if (item.SubMenus.Count > 0) {
+                                <ul class="dropdown-menu">
+                                    @foreach (var item2 in item.SubMenus) {
+                                        <li><a href="/@item2.submenuurl/@item2.id">@item2.submenuname</a></li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                }
+            </ul>
+        </nav>
+    </div>
+    <!-- /Top Nav -->
+
+</div><!-- /.container --> 
